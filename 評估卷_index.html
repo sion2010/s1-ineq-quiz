@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="zh-Hant"><head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>簡易不等式教學建議 · 評估卷</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css"/>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
+<style>
+:root{--ink:#1c2430;--muted:#5b6675;--line:#d7deea;--paper:#f6f3eb;--card:#fffdf8;--teal:#0f6d6a;--teal-d:#0b524f;--gold:#c9a227;--rose:#b42318;--ok:#1b7a3d;--shadow:0 10px 30px rgba(28,36,48,.08)}
+*{box-sizing:border-box}html,body{margin:0;background:var(--paper);color:var(--ink);font-family:"Noto Sans CJK TC","Microsoft JhengHei","PingFang TC",sans-serif}
+button,input,textarea,select{font-family:inherit}
+.wrap{max-width:980px;margin:0 auto;padding:20px 16px 80px}
+header.app{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:18px}
+.brand{display:flex;gap:12px;align-items:center}
+.badge{width:44px;height:44px;border-radius:12px;background:linear-gradient(160deg,var(--teal),#163a4a);color:#fff;display:grid;place-items:center;font-weight:800}
+h1{font-size:20px;margin:0}.sub{color:var(--muted);font-size:13px;margin-top:2px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);padding:20px}
+.hidden{display:none!important}label{display:block;font-size:13px;color:var(--muted);margin:10px 0 6px}
+input[type=text],input[type=password],textarea,select{width:100%;border:1px solid var(--line);border-radius:10px;padding:11px 12px;font-size:16px;background:#fff}
+textarea{min-height:110px;resize:vertical;line-height:1.5}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}@media(max-width:640px){.row{grid-template-columns:1fr}}
+.btn{border:0;border-radius:12px;padding:11px 16px;font-weight:700;cursor:pointer}
+.btn-primary{background:var(--teal);color:#fff}.btn-ghost{background:#eef3f2;color:var(--ink)}
+.btn-gold{background:var(--gold);color:#1c1608}.btn-rose{background:#f8e8e6;color:var(--rose)}
+.btn-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.pill{display:inline-block;background:#e8f1f0;color:var(--teal-d);border-radius:999px;padding:3px 10px;font-size:12px;font-weight:700}
+.progress{height:8px;background:#e6ebea;border-radius:99px;overflow:hidden;margin:8px 0 16px}
+.progress>i{display:block;height:100%;background:linear-gradient(90deg,var(--teal),#3aa39a);width:0}
+.qhead{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+.marks{color:var(--muted);font-size:13px;white-space:nowrap}
+.stem{font-size:20px;line-height:1.55;margin:8px 0 14px}
+.modes{display:flex;gap:6px;margin-bottom:10px}.modes button{flex:1}.modes button.on{background:var(--teal);color:#fff}
+canvas.pad{width:100%;height:220px;border:1px dashed #9aa7b3;border-radius:12px;background:#fff;touch-action:none;cursor:crosshair}
+.navq{display:flex;justify-content:space-between;gap:8px;margin-top:16px}
+.qdots{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
+.qdots button{width:34px;height:34px;border-radius:8px;border:1px solid var(--line);background:#fff;cursor:pointer;font-size:11px}
+.qdots button.done{background:#e8f6ec;border-color:#b7e0c3}.qdots button.now{outline:2px solid var(--teal)}
+.stepok{color:var(--ok)}.stepmiss{color:var(--rose)}
+table{width:100%;border-collapse:collapse;font-size:14px}th,td{border-bottom:1px solid var(--line);padding:8px 6px;text-align:left}th{font-size:12px;color:var(--muted)}
+.scorebig{font-size:42px;font-weight:800;color:var(--teal-d)}.hint{font-size:13px;color:var(--muted);line-height:1.5}
+.nl{margin:8px 0 4px;overflow-x:auto}footer.note{margin-top:18px;font-size:12px;color:var(--muted)}
+.login-hero{text-align:center;margin-bottom:16px}.login-hero h2{margin:6px 0 4px}
+</style></head><body>
+<div class="wrap">
+<div id="sitesBar" class="hidden" style="background:#163a4a;color:#fff;padding:10px 14px;border-radius:12px;margin-bottom:12px;display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:space-between">
+  <span>你而家喺 Google Sites 入面開。內嵌視窗可能儲唔到成績，建議用新分頁作答。</span>
+  <button class="btn btn-gold" type="button" onclick="window.open(location.href,'_blank')">新分頁全螢幕開啟</button>
+</div>
+<script>
+(function(){
+  try {
+    if (window.self !== window.top) {
+      var b = document.getElementById("sitesBar");
+      if (b) { b.classList.remove("hidden"); b.style.display="flex"; }
+    }
+  } catch(e) {
+    var b = document.getElementById("sitesBar");
+    if (b) { b.classList.remove("hidden"); b.style.display="flex"; }
+  }
+})();
+</script>
+
+<header class="app"><div class="brand"><div class="badge">評</div><div>
+<h1>簡易不等式教學建議 · 評估卷</h1>
+<div class="sub">甲部：最大／最小整數 30 題　·　乙部：一元一次方程 20 題　·　共 50 題／125 分</div>
+</div></div><span class="pill" id="whoPill">未登入</span></header>
+<section id="loginView" class="card">
+<div class="login-hero"><div class="pill">3B 名單已內建　·　個人四位密碼</div>
+<h2>學生／教師登入</h2>
+<p class="hint">SET：<b>簡易不等式教學建議</b>　·　學生選座號後輸入個人密碼</p></div>
+<label>選擇學生（3B1–3B33）</label><select id="stuPick"></select>
+<div class="row"><div><label>學生個人密碼</label><input id="stuPin" type="password" inputmode="numeric" maxlength="4" placeholder="例如 1234"/></div>
+<div><label>教師密碼</label><input id="setPass" type="password" inputmode="numeric" placeholder="例如 12345"/></div></div>
+<div class="btn-row"><button class="btn btn-primary" onclick="loginStudent()">學生開始作答</button>
+<button class="btn btn-ghost" onclick="loginTeacher()">教師報告室</button>
+</div>
+<p class="hint" style="margin-top:14px">打字／手寫 OCR／語音。乙部寫關鍵步驟。報告：未交最先，再由低分到高分。</p>
+</section>
+<section id="quizView" class="hidden">
+<div class="progress"><i id="bar"></i></div><div class="qdots" id="qdots"></div><div class="card" id="qcard"></div>
+<div class="navq"><button class="btn btn-ghost" onclick="prevQ()">上一題</button><button class="btn btn-primary" onclick="nextQ()">下一題</button></div>
+<div class="btn-row"><button class="btn btn-gold" onclick="reviewAll()">預覽全部作答</button>
+<button class="btn btn-primary" onclick="submitPaper()">交卷並即時評分</button>
+<button class="btn btn-rose" onclick="logout()">離開</button></div>
+</section>
+<section id="resultView" class="hidden"><div class="card" id="resultCard"></div>
+<div class="btn-row"><button class="btn btn-ghost" onclick="backToQuiz()">返回修改</button>
+<button class="btn btn-primary" onclick="downloadMyWord()">下載我的評分報告（Word）</button></div></section>
+<section id="teacherView" class="hidden"><div class="card">
+<h2 style="margin-top:0">教師報告室 · 由最差排至最好</h2>
+<div class="btn-row">
+<button class="btn btn-primary" onclick="renderTeacher()">重新整理</button>
+<button class="btn btn-gold" onclick="exportTeacherWord()">匯出全班 Word</button>
+<button class="btn btn-ghost" onclick="exportJSON()">匯出 JSON</button>
+<button class="btn btn-ghost" onclick="document.getElementById('imp').click()">匯入 JSON</button>
+<button class="btn btn-rose" onclick="clearAll()">清除本機成績</button>
+<input id="imp" type="file" accept="application/json" class="hidden" onchange="importJSON(event)"/>
+</div><div id="teacherTable" style="margin-top:14px;overflow:auto"></div></div>
+<div class="btn-row"><button class="btn btn-ghost" onclick="logout()">返回登入</button></div></section>
+<footer class="note">SET：簡易不等式教學建議　·　甲部 30 題　乙部 20 題　滿分 125</footer>
+</div>
+<script>
+
+const SET_NAME = "簡易不等式教學建議";
+const SET_PASS = "246810";
+const STORE = "ineq_eq_set_2026_v4";
+const ROSTER = [
+  ["3B1","陳嘉晞","5813"],["3B2","陳祉燐","2749"],["3B3","鄭亦迅","9360"],["3B4","張嘉顯","4182"],
+  ["3B5","張雍柔","7604"],["3B6","趙仕賢","1528"],["3B7","蔡俊燊","3947"],["3B8","周芷晴","8206"],
+  ["3B9","鍾熙桐","6471"],["3B10","何晞彤","2095"],["3B11","洪其灝","5738"],["3B12","林傲兒","8614"],
+  ["3B13","林尹莉","4309"],["3B14","林彥彤","7925"],["3B15","劉曉柔","3160"],["3B16","羅榮城","9542"],
+  ["3B17","李棹朗","1876"],["3B18","李洛睿","6283"],["3B19","梁宗穎","7401"],["3B20","黎港馨","2957"],
+  ["3B21","林東陽","5036"],["3B22","劉羽","8194"],["3B23","文子政","3672"],["3B24","吳子瑜","9418"],
+  ["3B25","余俊錦","2580"],["3B26","石晞語","6743"],["3B27","鄧瑋樂","1029"],["3B28","曾灝","4865"],
+  ["3B29","謝熙諾","7308"],["3B30","黃靖雯","2156"],["3B31","黃皓雋","8690"],["3B32","汪朗毅","5472"],
+  ["3B33","曾貴好","3914"]
+].map(([id,name,pin])=>({id,name,pin}));
+
+function nl(center, closed, dir, label) {
+  const min = center - 4, max = center + 4;
+  const w = 520, h = 78, y = 40;
+  const x = v => 30 + (v - min) / (max - min) * (w - 60);
+  let ticks = "";
+  for (let i = Math.ceil(min); i <= Math.floor(max); i++) {
+    ticks += `<line x1="${x(i)}" y1="${y-7}" x2="${x(i)}" y2="${y+7}" stroke="#1c2430"/>
+      <text x="${x(i)}" y="${y+24}" text-anchor="middle" font-size="12">${i}</text>`;
+  }
+  const cx = x(center);
+  const arrow = dir === "right"
+    ? `<line x1="${cx}" y1="${y}" x2="${w-18}" y2="${y}" stroke="#0f6d6a" stroke-width="3"/><polygon points="${w-18},${y-7} ${w-4},${y} ${w-18},${y+7}" fill="#0f6d6a"/>`
+    : `<line x1="18" y1="${y}" x2="${cx}" y2="${y}" stroke="#0f6d6a" stroke-width="3"/><polygon points="18,${y-7} 4,${y} 18,${y+7}" fill="#0f6d6a"/>`;
+  const dot = closed
+    ? `<circle cx="${cx}" cy="${y}" r="7" fill="#0f6d6a"/>`
+    : `<circle cx="${cx}" cy="${y}" r="7" fill="#fff" stroke="#0f6d6a" stroke-width="3"/>`;
+  return `<div class="nl"><svg viewBox="0 0 ${w} ${h}" width="100%" height="78">
+    <line x1="10" y1="${y}" x2="${w-10}" y2="${y}" stroke="#1c2430" stroke-width="2"/>
+    ${ticks}${arrow}${dot}
+    <text x="${cx}" y="16" text-anchor="middle" font-size="13" fill="#0b524f">${label}</text>
+  </svg></div>`;
+}
+function intQ(id, html, answer, label) {
+  const pats = [];
+  if (answer < 0) {
+    pats.push(new RegExp("(^|[^0-9])" + answer + "([^0-9.]|$)"));
+    pats.push(new RegExp("負\\s*" + (-answer)));
+  } else if (answer === 0) {
+    pats.push(/(^|[^0-9-])0([^0-9.]|$)/); pats.push(/零/);
+  } else {
+    pats.push(new RegExp("(^|[^0-9-])" + answer + "([^0-9.]|$)"));
+  }
+  return { id, part:"甲", max:2, type:"int", html, answer, keys:[{id:"A", marks:2, label, pat:pats}] };
+}
+
+const QUESTIONS = [
+  intQ(1,"若 \\( x \\gt \\dfrac{11}{4} \\)，滿足此不等式的<strong>最小整數</strong>是多少？",3,"11/4 介乎 2 與 3，最小整數 3"),
+  intQ(2,"若 \\( x \\le \\dfrac{32}{5} \\)，滿足此不等式的<strong>最大整數</strong>是多少？",6,"32/5 介乎 6 與 7，最大整數 6"),
+  intQ(3,"若 \\( x \\lt \\dfrac{11}{2} \\)，滿足此不等式的<strong>最大整數</strong>是多少？",5,"11/2 介乎 5 與 6，最大整數 5"),
+  intQ(4,"若 \\( x \\ge \\dfrac{8}{3} \\)，滿足此不等式的<strong>最小整數</strong>是多少？",3,"8/3 介乎 2 與 3，最小整數 3"),
+  intQ(5,"若 \\( x \\gt -\\dfrac{9}{5} \\)，滿足此不等式的<strong>最小整數</strong>是多少？",-1,"−9/5 介乎 −2 與 −1，最小整數 −1"),
+  intQ(6,"若 \\( x \\le -\\dfrac{16}{5} \\)，滿足此不等式的<strong>最大整數</strong>是多少？",-4,"−16/5 介乎 −4 與 −3，最大整數 −4"),
+  intQ(7,"若 \\( x \\lt \\dfrac{4}{5} \\)，滿足此不等式的<strong>最大整數</strong>是多少？",0,"4/5 介乎 0 與 1，最大整數 0"),
+  intQ(8,"若 \\( x \\ge -\\dfrac{5}{2} \\)，滿足此不等式的<strong>最小整數</strong>是多少？",-2,"−5/2 介乎 −3 與 −2，最小整數 −2"),
+  intQ(9,"若 \\( x \\gt \\dfrac{3}{10} \\)，滿足此不等式的<strong>最小整數</strong>是多少？",1,"3/10 介乎 0 與 1，最小整數 1"),
+  intQ(10,"若 \\( x \\le \\dfrac{91}{10} \\)，滿足此不等式的<strong>最大整數</strong>是多少？",9,"91/10 介乎 9 與 10，最大整數 9"),
+  intQ(11,"若 \\( x \\lt -\\dfrac{41}{10} \\)，滿足此不等式的<strong>最大整數</strong>是多少？",-5,"−41/10 介乎 −5 與 −4，最大整數 −5"),
+  intQ(12,"若 \\( x \\ge \\dfrac{36}{5} \\)，滿足此不等式的<strong>最小整數</strong>是多少？",8,"36/5 介乎 7 與 8，最小整數 8"),
+  intQ(13,"若 \\( x \\gt \\dfrac{13}{4} \\)，滿足此不等式的<strong>最小整數</strong>是多少？",4,"13/4 介乎 3 與 4，最小整數 4"),
+  intQ(14,"若 \\( x \\le \\dfrac{19}{5} \\)，滿足此不等式的<strong>最大整數</strong>是多少？",3,"19/5 介乎 3 與 4，最大整數 3"),
+  intQ(15,"若 \\( x \\lt -\\dfrac{1}{4} \\)，滿足此不等式的<strong>最大整數</strong>是多少？",-1,"−1/4 介乎 −1 與 0，最大整數 −1"),
+  intQ(16,"若 \\( x \\ge -\\dfrac{11}{3} \\)，滿足此不等式的<strong>最小整數</strong>是多少？",-3,"−11/3 介乎 −4 與 −3，最小整數 −3"),
+  intQ(17,"若 \\( x \\gt \\dfrac{7}{3} \\)，滿足此不等式的<strong>最小整數</strong>是多少？",3,"7/3 介乎 2 與 3，最小整數 3"),
+  intQ(18,"若 \\( x \\le \\dfrac{1}{8} \\)，滿足此不等式的<strong>最大整數</strong>是多少？",0,"1/8 介乎 0 與 1，最大整數 0"),
+  intQ(19,"若 \\( x \\lt \\dfrac{53}{5} \\)，滿足此不等式的<strong>最大整數</strong>是多少？",10,"53/5 介乎 10 與 11，最大整數 10"),
+  intQ(20,"若 \\( x \\ge -\\dfrac{1}{100} \\)，滿足此不等式的<strong>最小整數</strong>是多少？",0,"−1/100 介乎 −1 與 0，最小整數 0"),
+  intQ(21,"下圖表示某不等式的解集。此解集的<strong>最小整數</strong>是多少？"+nl(1.5,false,"right","3/2（空心，向右）"),2,"圖 x＞3/2，最小整數 2"),
+  intQ(22,"下圖表示某不等式的解集。此解集的<strong>最大整數</strong>是多少？"+nl(3.6,true,"left","18/5（實心，向左）"),3,"圖 x≤18/5，最大整數 3"),
+  intQ(23,"下圖表示某不等式的解集。此解集的<strong>最大整數</strong>是多少？"+nl(-0.5,false,"left","−1/2（空心，向左）"),-1,"圖 x＜−1/2，最大整數 −1"),
+  intQ(24,"下圖表示某不等式的解集。此解集的<strong>最小整數</strong>是多少？"+nl(2.5,true,"right","5/2（實心，向右）"),3,"圖 x≥5/2，最小整數 3"),
+  intQ(25,"下圖表示某不等式的解集。此解集的<strong>最大整數</strong>是多少？"+nl(4.2,false,"left","21/5（空心，向左）"),4,"圖 x＜21/5，最大整數 4"),
+  intQ(26,"下圖表示某不等式的解集。此解集的<strong>最小整數</strong>是多少？"+nl(-2.4,true,"right","−12/5（實心，向右）"),-2,"圖 x≥−12/5，最小整數 −2"),
+  intQ(27,"下圖表示某不等式的解集。此解集的<strong>最小整數</strong>是多少？"+nl(-11/3,false,"right","−11/3（空心，向右）"),-3,"圖 x＞−11/3，最小整數 −3"),
+  intQ(28,"下圖表示某不等式的解集。此解集的<strong>最大整數</strong>是多少？"+nl(0.6,true,"left","3/5（實心，向左）"),0,"圖 x≤3/5，最大整數 0"),
+  intQ(29,"下圖表示某不等式的解集。此解集的<strong>最大整數</strong>是多少？"+nl(-1.1,true,"left","−11/10（實心，向左）"),-2,"圖 x≤−11/10，最大整數 −2"),
+  intQ(30,"下圖表示某不等式的解集。此解集的<strong>最小整數</strong>是多少？"+nl(-3.5,true,"right","−7/2（實心，向右）"),-3,"圖 x≥−7/2，最小整數 −3"),
+  {id:31,part:"乙",max:2,type:"eq",html:"解方程：\\( x + \\dfrac{1}{2} = 2 \\)",answer:"3/2",keys:[
+    {id:"S1",marks:1,label:"關鍵步驟：x=2−1/2",pat:[/2\s*[-−]\s*1\s*[\/／]\s*2/,/x\s*=\s*3\s*[\/／]\s*2/]},
+    {id:"A",marks:1,label:"答案 x=3/2",pat:[/x\s*=\s*3\s*[\/／]\s*2/,/答案.{0,4}3\s*[\/／]\s*2/]}]},
+  {id:32,part:"乙",max:2,type:"eq",html:"解方程：\\( x - \\dfrac{1}{3} = 1 \\)",answer:"4/3",keys:[
+    {id:"S1",marks:1,label:"關鍵步驟：x=1+1/3",pat:[/1\s*[+＋]\s*1\s*[\/／]\s*3/,/x\s*=\s*4\s*[\/／]\s*3/]},
+    {id:"A",marks:1,label:"答案 x=4/3",pat:[/x\s*=\s*4\s*[\/／]\s*3/]}]},
+  {id:33,part:"乙",max:2,type:"eq",html:"解方程：\\( 4x = 3 \\)",answer:"3/4",keys:[
+    {id:"S1",marks:1,label:"關鍵步驟：兩邊÷4 或 3÷4",pat:[/3\s*[÷\/／]\s*4/,/x\s*=\s*3\s*[\/／]\s*4/]},
+    {id:"A",marks:1,label:"答案 x=3/4",pat:[/x\s*=\s*3\s*[\/／]\s*4/]}]},
+  {id:34,part:"乙",max:2,type:"eq",html:"解方程：\\( \\dfrac{x}{2} = \\dfrac{3}{5} \\)",answer:"6/5",keys:[
+    {id:"S1",marks:1,label:"關鍵步驟：兩邊×2 或 3/5×2",pat:[/3\s*[\/／]\s*5\s*[×x*]\s*2/,/兩邊.*2/,/x\s*=\s*6\s*[\/／]\s*5/]},
+    {id:"A",marks:1,label:"答案 x=6/5",pat:[/x\s*=\s*6\s*[\/／]\s*5/]}]},
+  {id:35,part:"乙",max:3,type:"eq",html:"解方程：\\( 2x + \\dfrac{1}{2} = 2 \\)",answer:"3/4",keys:[
+    {id:"S1",marks:1,label:"關鍵步驟：2x=3/2 或 2−1/2",pat:[/2x\s*=\s*3\s*[\/／]\s*2/,/2\s*[-−]\s*1\s*[\/／]\s*2/]},
+    {id:"S2",marks:1,label:"關鍵步驟：兩邊÷2",pat:[/3\s*[\/／]\s*2\s*[÷\/／]\s*2/,/x\s*=\s*3\s*[\/／]\s*4/]},
+    {id:"A",marks:1,label:"答案 x=3/4",pat:[/x\s*=\s*3\s*[\/／]\s*4/]}]},
+  {id:36,part:"乙",max:3,type:"eq",html:"解方程：\\( 3x - \\dfrac{1}{2} = 1 \\)",answer:"1/2",keys:[
+    {id:"S1",marks:1,label:"關鍵步驟：3x=3/2 或 1+1/2",pat:[/3x\s*=\s*3\s*[\/／]\s*2/,/1\s*[+＋]\s*1\s*[\/／]\s*2/]},
+    {id:"S2",marks:1,label:"關鍵步驟：兩邊÷3",pat:[/3\s*[\/／]\s*2\s*[÷\/／]\s*3/,/x\s*=\s*1\s*[\/／]\s*2/]},
+    {id:"A",marks:1,label:"答案 x=1/2",pat:[/x\s*=\s*1\s*[\/／]\s*2/]}]},
+  {id:37,part:"乙",max:3,type:"eq",html:"解方程：\\( \\dfrac{x}{3} + \\dfrac{1}{2} = 1 \\)",answer:"3/2",keys:[
+    {id:"S1",marks:1,label:"關鍵步驟：x/3=1/2 或 1−1/2",pat:[/x\s*\/\s*3\s*=\s*1\s*[\/／]\s*2/,/1\s*[-−]\s*1\s*[\/／]\s*2/]},
+    {id:"S2",marks:1,label:"關鍵步驟：兩邊×3",pat:[/1\s*[\/／]\s*2\s*[×x*]\s*3/,/x\s*=\s*3\s*[\/／]\s*2/]},
+    {id:"A",marks:1,label:"答案 x=3/2",pat:[/x\s*=\s*3\s*[\/／]\s*2/]}]},
+  {id:38,part:"乙",max:3,type:"eq",html:"解方程：\\( 4x + \\dfrac{1}{2} = 2 \\)",answer:"3/8",keys:[
+    {id:"S1",marks:1,label:"關鍵步驟：4x=3/2 或 2−1/2",pat:[/4x\s*=\s*3\s*[\/／]\s*2/,/2\s*[-−]\s*1\s*[\/／]\s*2/]},
+    {id:"S2",marks:1,label:"關鍵步驟：兩邊÷4",pat:[/3\s*[\/／]\s*2\s*[÷\/／]\s*4/,/x\s*=\s*3\s*[\/／]\s*8/]},
+    {id:"A",marks:1,label:"答案 x=3/8",pat:[/x\s*=\s*3\s*[\/／]\s*8/]}]},
+  {id:39,part:"乙",max:4,type:"eq",html:"解方程：\\( 3x + \\dfrac{1}{2} = x + 2 \\)（兩邊都有 x）",answer:"3/4",keys:[
+    {id:"S1",marks:1,label:"關鍵步驟：3x−x 或 2−1/2",pat:[/3x\s*[-−]\s*x/,/2\s*[-−]\s*1\s*[\/／]\s*2/,/2x\s*=/]},
+    {id:"S2",marks:1,label:"關鍵步驟：2x=3/2",pat:[/2x\s*=\s*3\s*[\/／]\s*2/]},
+    {id:"A",marks:2,label:"答案 x=3/4",pat:[/x\s*=\s*3\s*[\/／]\s*4/]}]},
+  {id:40,part:"乙",max:4,type:"eq",html:"解方程：\\( 3\\left(x + \\dfrac{1}{6}\\right) = 1 \\)（分配律拆括號）",answer:"1/6",keys:[
+    {id:"S1",marks:1,label:"關鍵步驟：3x+1/2=1 或 x+1/6=1/3",pat:[/3x\s*[+＋]\s*1\s*[\/／]\s*2/,/x\s*[+＋]\s*1\s*[\/／]\s*6\s*=\s*1\s*[\/／]\s*3/]},
+    {id:"S2",marks:1,label:"關鍵步驟：化簡得 x=1/6",pat:[/x\s*=\s*1\s*[\/／]\s*6/,/1\s*[-−]\s*1\s*[\/／]\s*2/,/1\s*[\/／]\s*3\s*[-−]\s*1\s*[\/／]\s*6/]},
+    {id:"A",marks:2,label:"答案 x=1/6",pat:[/x\s*=\s*1\s*[\/／]\s*6/]}]},
+  {id:41,part:"乙",max:4,type:"eq",html:"解方程：\\( 2\\left(x - \\dfrac{1}{4}\\right) + x = 1 \\)（拆括號後兩個 x 項）",answer:"1/2",keys:[
+    {id:"S1",marks:1,label:"關鍵步驟：2x−1/2+x=1",pat:[/2x\s*[-−]\s*1\s*[\/／]\s*2/,/2x.*\+?\s*x/]},
+    {id:"S2",marks:1,label:"關鍵步驟：3x=3/2 或 3x−1/2=1",pat:[/3x\s*=\s*3\s*[\/／]\s*2/,/3x\s*[-−]\s*1\s*[\/／]\s*2/,/1\s*[+＋]\s*1\s*[\/／]\s*2/]},
+    {id:"A",marks:2,label:"答案 x=1/2",pat:[/x\s*=\s*1\s*[\/／]\s*2/]}]},
+  {id:42,part:"乙",max:4,type:"eq",html:"解方程：\\( \\dfrac{x}{2} + \\dfrac{x}{6} = \\dfrac{1}{3} \\)（分數，先通分）",answer:"1/2",keys:[
+    {id:"S1",marks:1,label:"關鍵步驟：通分或兩邊×6",pat:[/3x\s*[+＋]\s*x/,/2x\s*\/\s*3/,/兩邊.*6/]},
+    {id:"S2",marks:1,label:"關鍵步驟：2x/3=1/3 或 2x=1",pat:[/2x\s*\/\s*3\s*=\s*1\s*[\/／]\s*3/,/2x\s*=\s*1/,/4x\s*=\s*2/]},
+    {id:"A",marks:2,label:"答案 x=1/2",pat:[/x\s*=\s*1\s*[\/／]\s*2/]}]},
+  {id:43,part:"乙",max:3,type:"eq",html:"解方程：\\( \\dfrac{x}{5} + \\dfrac{1}{4} = \\dfrac{1}{2} \\)",answer:"5/4",keys:[
+    {id:"S1",marks:1,label:"關鍵步驟：x/5=1/4 或 1/2−1/4",pat:[/x\s*\/\s*5\s*=\s*1\s*[\/／]\s*4/,/1\s*[\/／]\s*2\s*[-−]\s*1\s*[\/／]\s*4/]},
+    {id:"S2",marks:1,label:"關鍵步驟：兩邊×5",pat:[/1\s*[\/／]\s*4\s*[×x*]\s*5/,/x\s*=\s*5\s*[\/／]\s*4/]},
+    {id:"A",marks:1,label:"答案 x=5/4",pat:[/x\s*=\s*5\s*[\/／]\s*4/]}]},
+  {id:44,part:"乙",max:3,type:"eq",html:"解方程：\\( 4\\left(x + \\dfrac{1}{2}\\right) = 3 \\)（分配律拆括號）",answer:"1/4",keys:[
+    {id:"S1",marks:1,label:"關鍵步驟：4x+2=3 或 x+1/2=3/4",pat:[/4x\s*[+＋]\s*2/,/x\s*[+＋]\s*1\s*[\/／]\s*2\s*=\s*3\s*[\/／]\s*4/]},
+    {id:"S2",marks:1,label:"關鍵步驟：4x=1 或 3/4−1/2",pat:[/4x\s*=\s*1/,/3\s*[\/／]\s*4\s*[-−]\s*1\s*[\/／]\s*2/,/x\s*=\s*1\s*[\/／]\s*4/]},
+    {id:"A",marks:1,label:"答案 x=1/4",pat:[/x\s*=\s*1\s*[\/／]\s*4/]}]},
+  {id:45,part:"乙",max:4,type:"eq",html:"解方程：\\( 5x + \\dfrac{1}{2} = 3x + 1 \\)（兩邊都有 x）",answer:"1/4",keys:[
+    {id:"S1",marks:1,label:"關鍵步驟：5x−3x 或 1−1/2",pat:[/5x\s*[-−]\s*3x/,/1\s*[-−]\s*1\s*[\/／]\s*2/,/2x\s*=/]},
+    {id:"S2",marks:1,label:"關鍵步驟：2x=1/2",pat:[/2x\s*=\s*1\s*[\/／]\s*2/]},
+    {id:"A",marks:2,label:"答案 x=1/4",pat:[/x\s*=\s*1\s*[\/／]\s*4/]}]},
+  {id:46,part:"乙",max:4,type:"eq",html:"解方程：\\( 2\\left(x + \\dfrac{1}{4}\\right) + \\dfrac{1}{2} = 2 \\)（拆括號後再移項）",answer:"1/2",keys:[
+    {id:"S1",marks:1,label:"關鍵步驟：2x+1/2+1/2=2 或 2x+1=2",pat:[/2x\s*[+＋]\s*1\s*[\/／]\s*2/,/2x\s*[+＋]\s*1\s*=\s*2/]},
+    {id:"S2",marks:1,label:"關鍵步驟：2x=1",pat:[/2x\s*=\s*1/,/2\s*[-−]\s*1([^\d\/]|$)/]},
+    {id:"A",marks:2,label:"答案 x=1/2",pat:[/x\s*=\s*1\s*[\/／]\s*2/]}]},
+  {id:47,part:"乙",max:4,type:"eq",html:"解方程：\\( 4x + \\dfrac{1}{2} = x + 2 \\)（兩邊都有 x）",answer:"1/2",keys:[
+    {id:"S1",marks:1,label:"關鍵步驟：4x−x 或 2−1/2",pat:[/4x\s*[-−]\s*x/,/2\s*[-−]\s*1\s*[\/／]\s*2/,/3x\s*=/]},
+    {id:"S2",marks:1,label:"關鍵步驟：3x=3/2",pat:[/3x\s*=\s*3\s*[\/／]\s*2/]},
+    {id:"A",marks:2,label:"答案 x=1/2",pat:[/x\s*=\s*1\s*[\/／]\s*2/]}]},
+  {id:48,part:"乙",max:4,type:"eq",html:"解方程：\\( 3\\left(x - \\dfrac{1}{4}\\right) + \\dfrac{1}{2} = 2 \\)（分配律，括號內減數）",answer:"3/4",keys:[
+    {id:"S1",marks:1,label:"關鍵步驟：3x−3/4+1/2=2",pat:[/3x\s*[-−]\s*3\s*[\/／]\s*4/,/3x\s*[-−]\s*1\s*[\/／]\s*4/]},
+    {id:"S2",marks:1,label:"關鍵步驟：3x=9/4 或 3x−1/4=2",pat:[/3x\s*=\s*9\s*[\/／]\s*4/,/3x\s*[-−]\s*1\s*[\/／]\s*4/,/2\s*[+＋]\s*1\s*[\/／]\s*4/,/2\s*[+＋]\s*3\s*[\/／]\s*4/]},
+    {id:"A",marks:2,label:"答案 x=3/4",pat:[/x\s*=\s*3\s*[\/／]\s*4/]}]},
+  {id:49,part:"乙",max:4,type:"eq",html:"解方程：\\( \\dfrac{x}{4} + \\dfrac{x}{8} = \\dfrac{1}{2} \\)（分數，先通分）",answer:"4/3",keys:[
+    {id:"S1",marks:1,label:"關鍵步驟：通分或兩邊×8",pat:[/2x\s*[+＋]\s*x/,/3x\s*\/\s*8/,/兩邊.*8/]},
+    {id:"S2",marks:1,label:"關鍵步驟：3x/8=1/2 或 3x=4",pat:[/3x\s*\/\s*8\s*=\s*1\s*[\/／]\s*2/,/3x\s*=\s*4/]},
+    {id:"A",marks:2,label:"答案 x=4/3",pat:[/x\s*=\s*4\s*[\/／]\s*3/]}]},
+  {id:50,part:"乙",max:4,type:"eq",html:"解方程：\\( 2\\left(2x + \\dfrac{1}{2}\\right) = x + 2 \\)（拆括號後兩邊都有 x）",answer:"1/3",keys:[
+    {id:"S1",marks:1,label:"關鍵步驟：4x+1=x+2",pat:[/4x\s*[+＋]\s*1/]},
+    {id:"S2",marks:1,label:"關鍵步驟：4x−x 或 3x=1",pat:[/4x\s*[-−]\s*x/,/3x\s*=\s*1/,/2\s*[-−]\s*1([^\d\/]|$)/]},
+    {id:"A",marks:2,label:"答案 x=1/3",pat:[/x\s*=\s*1\s*[\/／]\s*3/]}]}
+
+];
